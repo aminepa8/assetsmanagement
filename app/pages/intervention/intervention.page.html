@@ -1,0 +1,78 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button routerLink='/scancodeintervention' routerDirection="root">
+                <ion-icon slot="icon-only" name="arrow-back" ></ion-icon>
+              </ion-button>
+        </ion-buttons>
+        <ion-buttons slot="secondary">
+            <ion-button routerLink="/home" routerDirection="root">
+              <ion-icon slot="start" name="home"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        <ion-title text-center >Intervention</ion-title>
+      </ion-toolbar>
+  </ion-header>
+  
+  <ion-content  padding>
+      
+      <ion-grid>
+        <ion-row justify-content-center>
+          <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+             
+              
+                  <ion-grid>
+                      <ion-row >
+                        <ion-col class="wsda">
+                         <h5>Barcode : {{id}}</h5> 
+                        </ion-col>
+                      </ion-row>
+                      <ion-row >
+                          <ion-col class="wsda">
+                            <h6>Type : {{mat_type}}</h6>
+                          </ion-col>
+                        </ion-row>
+                        <ion-row >
+                          <ion-col class="wsda">
+                            <h6>Modele : {{mat_modele}}</h6>
+                          </ion-col>
+                        </ion-row>
+                        <ion-row>
+                          <ion-col  class="wsda">
+                            <h6>Numero serie: {{mat_nserie}}</h6>
+                          </ion-col>
+                        </ion-row>
+                        <ion-row >
+                          <ion-col class="wsda" >
+                              <h6>Utilisateur : {{mat_user}} </h6>
+                          </ion-col>
+                          </ion-row>
+                  </ion-grid>
+          <ion-list lines="none">
+          <ion-item class="wsd" >
+              <ion-textarea [(ngModel)]="observationtext" placeholder="Votre observation ici..."></ion-textarea>
+          </ion-item>
+          </ion-list>
+             
+          </ion-col>
+        </ion-row>
+        <ion-row justify-content-center>
+          <ion-col class="ion-margin-bottom">
+              
+                <ion-item>
+                    <ion-label>En Panne</ion-label>
+                  <ion-checkbox [(ngModel)]="checkboxenpanne" color="primary"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                    <ion-label>Confirm Observarion</ion-label>
+                  <ion-checkbox [(ngModel)]="confirmCheck" color="primary"></ion-checkbox>
+                </ion-item>
+               
+                <div padding>
+                  <ion-button size="large" type="submit"  expand="block"  [disabled]="!observationtext || !confirmCheck" (click)="AssetIntervention()">Enregistrer</ion-button>
+                </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    
+  </ion-content>

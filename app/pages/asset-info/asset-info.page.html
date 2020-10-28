@@ -1,0 +1,81 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button routerLink='/scan-code/{{codesession}}' routerDirection="root">
+                <ion-icon slot="icon-only" name="arrow-back" ></ion-icon>
+              </ion-button>
+        </ion-buttons>
+        <ion-buttons slot="secondary">
+            <ion-button routerLink="/home" routerDirection="root">
+              <ion-icon slot="start" name="home"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        <ion-title text-center >Inventaire</ion-title>
+      </ion-toolbar>
+  </ion-header>
+  
+  <ion-content  padding>
+   
+      <ion-grid>
+        <ion-row justify-content-center>
+          <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+            <ion-grid>
+              <ion-row >
+                <ion-col class="wsd">
+                 <h5>Barcode : {{id}}</h5> 
+                </ion-col>
+              </ion-row>
+              <ion-row >
+                <ion-col class="wsd">
+                  <h6>Type : {{mat_type}}</h6>
+                </ion-col>
+              </ion-row>
+              <ion-row >
+                <ion-col class="wsd">
+                  <h6>Modele : {{mat_modele}}</h6>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col  class="wsd">
+                  <h6>Numero serie : {{mat_nserie}}</h6>
+                </ion-col>
+              </ion-row>
+              <ion-row >
+                <ion-col class="wsd"  col-3 >
+                    <h6>Utilisateur : </h6>
+                </ion-col>
+                <ion-col class="wsd" col-8>
+                  <ion-item>
+                        <ion-input   [(ngModel)]="mat_user" type="text" placeholder="User name" ngModel required>
+                        </ion-input>
+                    </ion-item>
+                
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col class="wsd" >
+                 
+                <ion-list >
+                    
+                    <ion-item>
+                        <label>Etat : {{mat_etat}}</label>
+                      <ion-select [(ngModel)]="etat" okText="Okay" cancelText="Dismiss">
+                      
+                        <ion-select-option selected = {{a}} disabled= {{a}}  ng-class="{'disbClas' :a}" value="Active">Active</ion-select-option>
+                        <ion-select-option selected = {{b}} disabled= {{b}}  ng-class="{'disbClas' :b}" value="En Panne">En Panne</ion-select-option>
+                        <ion-select-option selected = {{c}} disabled= {{c}}  ng-class="{'disbClas' :c}" value="Reformee">Reformee</ion-select-option>
+                        <ion-select-option selected = {{d}} disabled= {{d}} ng-class="{'disbClas' :d}" value="A Redeployer">A Redeployer</ion-select-option>
+                      </ion-select>
+                    </ion-item>
+                    </ion-list>
+                  </ion-col>
+                  </ion-row>
+                  </ion-grid>
+            <div padding>
+              <ion-button size="large" type="submit"  expand="block" (click)="AssetEtat()">Confirm</ion-button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    
+  </ion-content>

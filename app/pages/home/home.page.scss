@@ -1,0 +1,19 @@
+
+.logo {
+    width: 120px;
+    height: 120px;
+    margin: 35px auto 8px;
+    border-radius: 10%;
+    background: url("/assets/img/homelogo.png") no-repeat;
+    background-size: 100%;
+  }
+  
+.pagebg {
+    --background: linear-gradient(to right top, #588ee0,
+     #4982e4, #3d76e7, #3869e8, #3b5ae7);
+  
+    
+    }
+    .btn{
+        margin-top: 30px;
+    }
